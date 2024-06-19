@@ -1,10 +1,45 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const scratchButton = document.getElementById('scratch-button');
+    const scratchCards = document.querySelectorAll('.scratch-card');
     const resultDiv = document.getElementById('result');
-
-    scratchButton.addEventListener('click', function() {
-        const outcomes = ["Você ganhou!", "Tente novamente!", "Você perdeu!"];
-        const randomOutcome = outcomes[Math.floor(Math.random() * outcomes.length)];
-        resultDiv.textContent = randomOutcome;
+    const timerSpan = document.getElementById('timer');
+    
+    let timeLeft = 300; // 5 minutes in seconds
+    const outcomes = ["🎉", "😢", "👍"];
+    
+    function updateTimer() {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        timerSpan.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        if (timeLeft > 0) {
+            timeLeft--;
+        } else {
+            clearInterval(timerInterval);
+            resultDiv.textContent = "Tempo esgotado!";
+        }
+    }
+    
+    const timerInterval = setInterval(updateTimer, 1000);
+    
+    scratchCards.forEach(card => {
+        card.addEventListener('click', function() {
+            if (!card.textContent.includes("🎉") && !card.textContent.includes("😢") && !card.textContent.includes("👍")) {
+                const randomOutcome = outcomes[Math.floor(Math.random() * outcomes.length)];
+                card.textContent = randomOutcome;
+                checkWinCondition();
+            }
+        });
     });
+    
+    function checkWinCondition() {
+        let winCount = 0;
+        scratchCards.forEach(card => {
+            if (card.textContent === "🎉") {
+                winCount++;
+            }
+        });
+        if (winCount >= 3) {
+            resultDiv.textContent = "Você ganhou!";
+            clearInterval(timerInterval);
+        }
+    }
 });
