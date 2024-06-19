@@ -38,8 +38,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         if (winCount >= 3) {
-            resultDiv.textContent = "Você ganhou!";
-            clearInterval(timerInterval);
-        }
-    }
-});
+            resultDiv.text

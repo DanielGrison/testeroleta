@@ -8,13 +8,15 @@
 </head>
 <body>
     <header>
-        <h1>Você ganhou 3 raspadinhas para ganhar até 20 rodadas</h1>
-        <div class="offer-timer">Essa oferta acaba em: <span id="timer">5:00</span></div>
+        <div class="offer">
+            <p>Essa oferta acaba em: <span id="timer">5:00 min...</span></p>
+        </div>
     </header>
     <main>
-        <section id="game">
+        <section class="scratch-game">
+            <h1>Você ganhou 3 raspadinhas para ganhar até 20 rodadas</h1>
             <h2>Acerte 3 bilhetes para ganhar</h2>
-            <div id="scratch-area">
+            <div class="scratch-area">
                 <div class="scratch-card">RASPE AQUI</div>
                 <div class="scratch-card">RASPE AQUI</div>
                 <div class="scratch-card">RASPE AQUI</div>
@@ -26,6 +28,7 @@
                 <div class="scratch-card">RASPE AQUI</div>
             </div>
             <button id="scratch-button">Passe o dedo para raspar</button>
+            <p class="remaining-tickets">3 bilhetes restantes</p>
             <div id="result"></div>
         </section>
     </main>

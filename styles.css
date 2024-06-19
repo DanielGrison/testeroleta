@@ -1,32 +1,36 @@
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
     background-color: #1d2d50;
     color: #fff;
-}
-
-header {
-    background-color: #ff9900;
-    padding: 20px;
-    color: white;
     text-align: center;
 }
 
-.offer-timer {
+header .offer {
+    background-color: #ff9900;
+    padding: 10px 0;
+    color: white;
     font-weight: bold;
-    margin-top: 10px;
 }
 
-#game {
-    margin: 20px;
+.scratch-game {
+    margin: 20px auto;
     padding: 20px;
     background-color: #293462;
     border: 1px solid #ddd;
-    display: inline-block;
     border-radius: 10px;
+    max-width: 600px;
 }
 
-#scratch-area {
+.scratch-game h1 {
+    font-size: 24px;
+}
+
+.scratch-game h2 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.scratch-area {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
@@ -52,6 +56,11 @@ header {
     color: white;
     border: none;
     border-radius: 5px;
+}
+
+.remaining-tickets {
+    margin-top: 10px;
+    font-size: 16px;
 }
 
 #result {
