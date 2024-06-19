@@ -1,22 +1,29 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #1d2d50;
+    color: #fff;
 }
 
 header {
     background-color: #ff9900;
     padding: 20px;
     color: white;
+    text-align: center;
+}
+
+.offer-timer {
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 #game {
     margin: 20px;
     padding: 20px;
-    background-color: #fff;
+    background-color: #293462;
     border: 1px solid #ddd;
     display: inline-block;
+    border-radius: 10px;
 }
 
 #scratch-area {
@@ -29,8 +36,12 @@ header {
 .scratch-card {
     background-color: #ccc;
     padding: 20px;
-    border: 1px solid #000;
+    border: 2px solid #000;
     cursor: pointer;
+    color: #000;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
 }
 
 #scratch-button {
